@@ -1,0 +1,57 @@
+.searched-item-container {
+  margin: 4rem auto;
+  background-color: lightsteelblue;
+  padding: 2px 1rem 1rem 1rem;
+  border-radius: 5px;
+  width: 25rem;
+}
+
+.searched-item-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+}
+
+.searched-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.description-and-button-container {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-close-searched-item {
+  border-radius: 5px;
+  cursor: pointer;
+  border-color: transparent;
+  margin-left: 24rem;
+  margin-bottom: 1px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+  color: gray;
+  border: 1px solid black;
+}
+
+.button-close-searched-item:hover {
+  background-color: steelblue;
+}
+
+.button-add-to-cart {
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+  font-weight: bold;
+  max-width: 8rem;
+  max-height: 2rem;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.button-add-to-cart:hover {
+  background-color: steelblue;
+}

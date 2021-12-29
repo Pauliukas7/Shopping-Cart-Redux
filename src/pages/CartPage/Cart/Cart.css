@@ -1,0 +1,58 @@
+.cart {
+  margin: 1rem auto;
+  border-radius: 6px;
+  background-color: white;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+  border: 1px solid black;
+  background-color: cornflowerblue;
+}
+
+.cart h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.close-cart {
+  margin-left: 37rem;
+  font-weight: bold;
+  background-color: #5fb3df;
+  border-color: transparent;
+  border-radius: 15px;
+  width: 2.5rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.close-cart:hover {
+  background-color: teal;
+}
+.cartempty-add-to-cart {
+  color: green;
+}
+
+.total-price-and-order-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-order {
+  height: 40px;
+  width: 7rem;
+  background-color: #5fb3df;
+  border-color: transparent;
+  border-radius: 5px;
+  border-width: 1px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button-order:hover {
+  background-color: teal;
+}

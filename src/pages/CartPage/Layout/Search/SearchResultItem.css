@@ -1,0 +1,19 @@
+.search-results-item {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: lightseagreen;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.search-item-price {
+  margin-right: 20px;
+  font: normal bold 18px Helvetica;
+}
+.search-item-title {
+  margin-left: 20px;
+  font: normal bold 18px Helvetica;
+}
