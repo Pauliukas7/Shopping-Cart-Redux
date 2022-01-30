@@ -18,6 +18,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 30rem;
+  overflow-y: scroll;
 }
 .close-cart {
   margin-left: 37rem;

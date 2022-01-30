@@ -1,3 +1,4 @@
+import { AppDispatch } from ".";
 import { cartActions, CartProduct } from "./cart-slice";
 import { uiActions } from "./ui-slice";
 
@@ -32,7 +33,7 @@ export const sendCartData = (cart: CartInterface) => {
 };
 
 export const fetchCartData = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: AppDispatch) => {
     const fetchData = async () => {
       const response = await fetch(
         "https://react-http-66d97-default-rtdb.firebaseio.com/cart.json"
@@ -49,7 +50,7 @@ export const fetchCartData = () => {
         cartActions.replaceCart({
           items: cartData.items || [],
           totalQuantity: cartData.totalQuantity,
-          totalPrice: cartData.totalPrice || 0,
+          totalPrice: cartData.totalPrice,
         })
       );
     } catch (error: any) {
@@ -59,7 +60,7 @@ export const fetchCartData = () => {
 };
 
 export const loadFeaturedProducts = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: AppDispatch) => {
     const loadProducts = async () => {
       const response = await fetch(
         "https://react-http-66d97-default-rtdb.firebaseio.com/featuredProducts.json"
@@ -77,7 +78,7 @@ export const loadFeaturedProducts = () => {
 };
 
 export const loadAllProducts = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: AppDispatch) => {
     const fetchAllProducts = async () => {
       const response = await fetch(
         "https://react-http-66d97-default-rtdb.firebaseio.com/allProducts.json"

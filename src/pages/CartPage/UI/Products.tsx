@@ -3,7 +3,7 @@ import { RootState } from "../../../store";
 import { ProductItem } from "./ProductItem";
 import "./Products.css";
 
-export function Products() {
+export const Products: React.FC = () => {
   const FEATURED_PRODUCTS = useSelector(
     (state: RootState) => state.ui.featuredProducts
   );
@@ -21,4 +21,4 @@ export function Products() {
       ))}
     </ul>
   );
-}
+};

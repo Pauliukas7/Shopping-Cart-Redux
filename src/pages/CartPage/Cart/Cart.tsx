@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-
 import { CartItem } from "./CartItem";
 import "./Cart.css";
 import { RootState } from "../../../store";
-import { cartActions, CartProduct } from "../../../store/cart-slice";
+import { CartProduct } from "../../../store/cart-slice";
 import { uiActions } from "../../../store/ui-slice";
 
-export function Cart() {
+export const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const closeCartHandler = () => {
     dispatch(uiActions.toggleCartOff());
@@ -18,10 +17,6 @@ export function Cart() {
   const totalPrice: number = useSelector(
     (state: RootState) => state.cart.totalPrice
   );
-
-  const orderClickHandler = () => {
-    dispatch(cartActions.openOrderForm());
-  };
 
   const cartNotEmpty = (
     <div className="cart">
@@ -45,9 +40,7 @@ export function Cart() {
       </ul>
       <div className="total-price-and-order-button">
         <h2>Total price: ${totalPrice.toFixed(2)}</h2>
-        <button className="button-order" onClick={orderClickHandler}>
-          Order
-        </button>
+        <button className="button-order">Order</button>
       </div>
     </div>
   );
@@ -67,4 +60,4 @@ export function Cart() {
   const CartElement = cartItems.length > 0 ? cartNotEmpty : cartEmpty;
 
   return CartElement;
-}
+};

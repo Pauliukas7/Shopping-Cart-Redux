@@ -1,9 +1,9 @@
-import MainHeader from "./MainHeader";
+import { MainHeader } from "./MainHeader";
 
 import { Fragment } from "react";
 
 import "./Layout.css";
-const Layout = (props: any) => {
+export const Layout: React.FC<React.ReactNode> = (props) => {
   return (
     <Fragment>
       <MainHeader />
@@ -11,5 +11,3 @@ const Layout = (props: any) => {
     </Fragment>
   );
 };
-
-export default Layout;

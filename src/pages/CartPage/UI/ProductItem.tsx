@@ -3,7 +3,14 @@ import { useDispatch } from "react-redux";
 import "./ProductItem.css";
 import { cartActions } from "../../../store/cart-slice";
 
-export function ProductItem(props: any) {
+interface ProductItemProps {
+  title: string;
+  price: number;
+  description: string;
+  id: string;
+}
+
+export const ProductItem: React.FC<ProductItemProps> = (props) => {
   const { title, price, description, id } = props;
   const dispatch = useDispatch();
 
@@ -26,12 +33,11 @@ export function ProductItem(props: any) {
       </div>
       <div className="item-description-and-button-container">
         <div className="item-description">{description}</div>
-        <div>
-          <button className="button-add" onClick={addToCartHandler}>
-            Add to cart
-          </button>
-        </div>
+
+        <button className="button-add" onClick={addToCartHandler}>
+          Add to cart
+        </button>
       </div>
     </li>
   );
-}
+};

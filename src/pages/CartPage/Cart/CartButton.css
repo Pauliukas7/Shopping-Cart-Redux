@@ -4,7 +4,7 @@
   border-color: #1ad1b9;
   color: #1ad1b9;
   min-width: 11rem;
-  max-width: 11rem;
+  max-width: 12rem;
   max-height: 3rem;
   font-size: 20px;
   border-radius: 5px;
@@ -31,4 +31,25 @@ span {
   border-radius: 30px;
   padding: 0.15rem 1.25rem;
   color: #1d1d1d;
+}
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

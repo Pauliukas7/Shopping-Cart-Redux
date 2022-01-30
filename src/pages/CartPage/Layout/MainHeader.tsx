@@ -1,14 +1,12 @@
 import { useDispatch } from "react-redux";
-
 import { uiActions } from "../../../store/ui-slice";
-import CartButton from "../Cart/CartButton";
-
+import { CartButton } from "../Cart/CartButton";
 import "./MainHeader.css";
 import { SearchResults } from "./Search/SearchResults";
 import React from "react";
 import { SearchInput } from "./Search/SearchInput";
 
-const MainHeader = () => {
+export const MainHeader: React.FC = () => {
   const searchInputRef: React.RefObject<HTMLInputElement> = React.createRef();
 
   const dispatch = useDispatch();
@@ -34,11 +32,9 @@ const MainHeader = () => {
       <div className="search">
         <SearchInput ref={searchInputRef} onChange={showSearchResultsHandler} />
 
-        <SearchResults searchText={searchInputRef.current?.value} />
+        <SearchResults />
       </div>
       <CartButton onClickCartButton={showCartHandler} />
     </div>
   );
 };
-
-export default MainHeader;
