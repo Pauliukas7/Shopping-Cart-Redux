@@ -5,7 +5,7 @@ import { uiActions } from "../../../../store/ui-slice";
 
 import "./SearchedItemDetails.css";
 
-export const SearchedItemDetails = () => {
+export const SearchedItemDetails: React.FC = () => {
   const dispatch = useDispatch();
 
   const itemDetails = useSelector(

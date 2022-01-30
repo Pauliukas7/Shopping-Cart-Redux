@@ -2,14 +2,6 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/cart-slice";
 import "./CartItem.css";
 
-// interface cartItemProps {
-//   product: { title: any; price: any; id: any; total: any; quantity: any; };
-//   title: string;
-//   price: number;
-//   id: string;
-//   total: number;
-//   quantity: number;
-// }
 interface Product {
   total: number;
   quantity: number;
@@ -19,10 +11,10 @@ interface Product {
   price: number;
 }
 
-interface cartItemProps {
+interface CartItemProps {
   product: Product;
 }
-export const CartItem = (props: cartItemProps) => {
+export const CartItem: React.FC<CartItemProps> = (props) => {
   const dispatch = useDispatch();
   const { title, price, id, total, quantity } = props.product;
 

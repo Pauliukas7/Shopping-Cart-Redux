@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface ProductsInterface {
+export interface Products {
   id: string;
   price: number;
   totalPrice: number;
@@ -14,9 +14,9 @@ export const uiSlice = createSlice({
   initialState: {
     cartIsVisible: false,
     searchedItemDetailsOpened: false,
-    searchedItemDetails: {} as ProductsInterface,
-    featuredProducts: [] as ProductsInterface[],
-    allProducts: [] as any,
+    searchedItemDetails: {} as Products,
+    featuredProducts: [] as Products[],
+    allProducts: [] as any[],
     searchResultsVisible: false,
     inputText: "",
   },

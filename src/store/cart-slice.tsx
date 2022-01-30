@@ -8,12 +8,11 @@ export interface CartProduct {
   title: string;
   description: string;
 }
-interface CartState {
+export interface CartState {
   items: CartProduct[];
   totalQuantity: number;
   changed: boolean;
   totalPrice: number;
-  orderFormOpened: boolean;
 }
 
 const initialState: CartState = {
@@ -21,7 +20,6 @@ const initialState: CartState = {
   totalQuantity: 0,
   changed: false,
   totalPrice: 0,
-  orderFormOpened: false,
 };
 
 export const cartSlice = createSlice({
@@ -63,15 +61,8 @@ export const cartSlice = createSlice({
         state.items = state.items.filter((item) => item.id !== id);
       } else {
         existingItem!.quantity--;
-        existingItem!.totalPrice =
-          existingItem!.totalPrice - existingItem!.price;
+        existingItem!.totalPrice -= existingItem!.price;
       }
-    },
-    openOrderForm(state) {
-      state.orderFormOpened = true;
-    },
-    closeOrderForm(state) {
-      state.orderFormOpened = true;
     },
   },
 });

@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import { MouseEventHandler, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../../store/ui-slice";
 import "./Modal.css";
 
-export default function Modal(props: any) {
+const Modal: React.FC<React.ReactNode> = (props) => {
   const overlayRef = useRef(null);
   const dispatch = useDispatch();
-  const closeCartHandler = (e: any) => {
+  const closeCartHandler: MouseEventHandler<HTMLDivElement> = (e) => {
     if (e.target === overlayRef.current) {
       dispatch(uiActions.toggleCartOff());
       dispatch(uiActions.hideSearchedItemDetails());
@@ -20,4 +20,6 @@ export default function Modal(props: any) {
       </div>
     </div>
   );
-}
+};
+
+export default Modal;
